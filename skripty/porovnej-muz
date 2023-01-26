@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ $# != 2 ] ; then
+  echo "Spatny pocet parametru" >&2
+  echo "Spravne pouziti: $0 <soubor1> <soubor2>" >&2
+  exit 2
+elif [[ (! -f "$1") || ! -r "$1" ]] ;then	          # prehlednejsi, ale jen v bash a ksh
+  echo "Soubor $1 neni obycejny, neexistuje nebo neni citelny" >&2
+  exit 2
+elif [ \( ! -f "$2" \) -o  ! -r "$2"  ] ;then     # klasicky test i s ukazkou zavorek
+  echo "Soubor $2 neni obycejny, neexistuje nebo neni citelny" >&2
+  exit 2
+fi
+
+if cmp "$1" "$2" >/dev/null ;then
+  echo "Soubory $1 a $2 jsou stejne" >&2
+else
+  echo "Soubory $1 a $2 jsou ruzne" >&2
+  exit 1
+fi

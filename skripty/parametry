@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+CITAC=1
+echo $@
+
+for T in "$@" ; do
+	echo "$CITAC. parametr je $T"
+	(( CITAC = CITAC + 1)) # ((CITAC++))
+done
+
+# hali beli to je cely

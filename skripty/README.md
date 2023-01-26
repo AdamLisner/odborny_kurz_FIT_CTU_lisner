@@ -1,0 +1,1 @@
+# odborny_kurz_FIT_CTU_lisner

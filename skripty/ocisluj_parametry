@@ -1,0 +1,10 @@
+#!/bin/bash
+I=1
+set $@
+
+while [ ! $# = 0  ] ; do
+    echo $I.parametr je $1
+    shift
+    ((I++))
+   # echo $# $I
+done

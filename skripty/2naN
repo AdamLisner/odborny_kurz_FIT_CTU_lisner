@@ -1,0 +1,23 @@
+#!/bin/bash
+
+CITAC=0
+VYSLEDEK=1
+#if [ $# != 1 ] ; then
+#  echo "Spatny pocet parametru" >&2
+#  echo "Spravne pouziti: $0 cislo" >&2
+#  exit 2
+#fi
+
+
+echo -n "Zadej cislo N:  "
+stty -echo
+read N
+stty echo
+echo ""
+while [ $CITAC -le "$N" ] ;do
+  echo "2 na $CITAC je $VYSLEDEK"
+  (( VYSLEDEK=VYSLEDEK*2 ))
+  (( CITAC++))
+  sleep 0.1 
+done
+

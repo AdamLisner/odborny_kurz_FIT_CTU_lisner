@@ -1,0 +1,17 @@
+#!/bin/bash
+
+
+while true ; do
+    echo "$@ [A/N]: "
+    read T
+    case "$T" in
+        [Nn] | [Nn][OoEe])
+            exit 1;;
+        [Aa][nN][Oo]|[YyAa]|[Yy][Ee][sS])
+            exit 0;;
+        *)
+            echo Zadej znovu
+    esac
+done
+
+    

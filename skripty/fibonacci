@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ $# = 1 ] ; then
+    N=$1
+else N=10
+fi
+
+echo $#
+a=0
+b=1
+for (( i=0 ; i < N;  i++ ))
+do
+    echo $i. $a 
+    fn=$((a + b))
+    a=$b
+    b=$fn
+done

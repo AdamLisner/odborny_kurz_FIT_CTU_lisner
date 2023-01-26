@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ ! -d "$1" ] ; then
+    echo "Zadaný parametr není adresář"
+    exit 1
+fi
+
+for S in "$1"/* ; do
+    if otazka "Chceš smazat soubor $S?" ; then
+        rm "$S"  # "$S" kdyby byla ve jmene mezera tak by se to fuckuplo
+    fi
+done

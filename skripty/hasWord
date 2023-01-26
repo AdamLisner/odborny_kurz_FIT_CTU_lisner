@@ -1,0 +1,5 @@
+#!/bin/bash
+FILE=$1
+WORD=$2
+sed 's/'$WORD'/.../g' $FILE > temp
+cat temp > $FILE
